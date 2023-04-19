@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Log in - My Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="upload.html">Upload</a></li>
+            <li><a href="messages.html">Messages</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Log in</h1>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+
+            <input type="submit" value="Log in">
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2023 My Blog
+    </footer>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the form from submitting
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Get user from LocalStorage
+            const user = JSON.parse(localStorage.getItem('user'));
+
+            if (!user || user.username !== username || user.password !== password) {
+                alert('Invalid username or password');
+                return;
+            }
+
+            // Set isLoggedIn to true
+            localStorage.setItemalert('Login successful!');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Upload - My Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="upload.html">Upload</a></li>
+            <li><a href="messages.html">Messages</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Upload</h1>
+        <form>
+            <label for="profile-picture">Profile Picture:</label>
+            <input type="file" id="profile-picture" name="profile-picture"><br><br>
+
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2023 My Blog
+    </footer>
+
+    <script>
+        const isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
+
+        if (!isLoggedIn) {
+            alert('Please log in to access this page');
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+
+</html>

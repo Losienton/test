@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register - My Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="upload.html">Upload</a></li>
+            <li><a href="messages.html">Messages</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Register</h1>
+        <form id="register-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password"><br><br>
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2023 My Blog
+    </footer>
+
+    <script>
+        const registerForm = document.getElementById('register-form');
+        registerForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the form from submitting
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return;
+            }
+
+            const user = {
+                username,
+                email,
+                password
+            };
+
+            // Save user to LocalStorage
+            localStorage.setItem('user', JSON.stringify(user));
+
+            alert('Registration successful!');
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+
+</html>

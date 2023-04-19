@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Messages - My Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Log in</a></li>
+            <li><a href="upload.html">Upload</a></li>
+            <li><a href="messages.html">Messages</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Messages</h1>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="profile-picture">Profile Picture:</label>
+            <input type="file" id="profile-picture" name="profile-picture"><br><br>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br><br>
+
+            <input type="submit" value="Send">
+        </form>
+
+        <hr>
+
+        <h2>Messages:</h2>
+        <div class="message">
+            <img src="profile-picture.jpg" alt="Profile Picture">
+            <p><strong>John Doe</strong></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuadatellus vitae gravida efficitur,
+                odio sapien hendrerit magna, nec venenatis orci magna eu tortor. Sed molestie efficitur elit, eget
+                faucibus nibh vehicula a. Fusce vel augue euismod, elementum mauris nec, ultricies leo. In in ex at quam
+                sodales efficitur. Etiam ornare velit et sapien consequat cursus. Proin nec dictum urna.</p>
+        </div>
+
+        <div class="message">
+            <img src="profile-picture.jpg" alt="Profile Picture">
+            <p><strong>Jane Doe</strong></p>
+            <p>Sed nec malesuada libero. Integer ullamcorper sapien et magna dictum, quis consequat magna vehicula.
+                Fusce nec libero eget leo tristique vehicula vel eu orci. Sed luctus urna vel sapien consectetur
+                dignissim. Fusce id massa id sapien venenatis ultrices nec sed leo. Vestibulum auctor eros ut sagittis
+                tristique. Nullam tincidunt vestibulum dolor vel suscipit.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2023 My Blog
+    </footer>
+
+    <script>
+        const isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
+
+        if (!isLoggedIn) {
+            alert('Please log in to access this page');
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+
+</html>
